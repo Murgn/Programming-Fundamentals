@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyFirstApplication", "MyFirstApplication\MyFirstApplication.vcxproj", "{6BEB0CEE-8190-4A1D-B233-A6447BFEBFF1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 1", "MyFirstApplication\MyFirstApplication.vcxproj", "{6BEB0CEE-8190-4A1D-B233-A6447BFEBFF1}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BeNiceToDan", "BeNiceToDan\BeNiceToDan.vcxproj", "{2D56268A-4DD8-4182-B84C-1235AFB081F6}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 2 - Data, Statements & Variables", "Tutorial 2 - Data, Statements & Variables\Tutorial 2 - Data, Statements & Variables.vcxproj", "{04A7C481-1DD3-4CAD-86F4-02FF63D15CA7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Salary Calculator", "Salary Calculator\Salary Calculator.vcxproj", "{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +43,14 @@ Global
 		{04A7C481-1DD3-4CAD-86F4-02FF63D15CA7}.Release|x64.Build.0 = Release|x64
 		{04A7C481-1DD3-4CAD-86F4-02FF63D15CA7}.Release|x86.ActiveCfg = Release|Win32
 		{04A7C481-1DD3-4CAD-86F4-02FF63D15CA7}.Release|x86.Build.0 = Release|Win32
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Debug|x64.ActiveCfg = Debug|x64
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Debug|x64.Build.0 = Debug|x64
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Debug|x86.ActiveCfg = Debug|Win32
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Debug|x86.Build.0 = Debug|Win32
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Release|x64.ActiveCfg = Release|x64
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Release|x64.Build.0 = Release|x64
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Release|x86.ActiveCfg = Release|Win32
+		{4FE8CBC6-FA07-416D-A8F2-918B4EB53028}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
