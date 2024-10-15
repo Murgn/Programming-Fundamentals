@@ -1,6 +1,5 @@
 #include <iostream>
 #include <Windows.h>
-#include <random>
 
 using namespace std;
 
@@ -51,33 +50,41 @@ int main()
     cout << sqrtf(8) << endl; // Square root
     cout << fabsf(-8) << endl; // Returns the absolute number, turns negative numbers positive
     cout << sinf(8) << endl; // Sine 
-    cout << cosf(8) << endl; // Cos
+    cout << cosf(8) << endl; // Cosine
 
     // -------------------------------------------------------
 
     for (int i = 0; i < 5; i++)
     {
-        MessageBeep(0xFFFFFFFF);
+        MessageBeep(10);
         Sleep(500);
-        MessageBeep(0x00000010L);
+        MessageBeep(20);
         Sleep(500);
         MessageBeep(100);
         Sleep(500);
     }
 
+    // -------------------------------------------------------
+
     MessageBoxA(0, "hello there", "a title", 0);
+
+    // -------------------------------------------------------
 
     for (int i = 0; i < 10; i++)
     {
         cout << GetTickCount() << endl;
+        Sleep(10);
     }
     
+    // -------------------------------------------------------
+
     while (true)
     {
         HDC dc = GetDC(GetDesktopWindow());
         Rectangle(dc, 100, 100, 200, 200);
     }
 
+    // -------------------------------------------------------
 }
 
 int Square(int num) 
@@ -109,5 +116,4 @@ int Multiply(int a, int b) { return a * b; }
 int Add(int a, int b) { return a + b; }
 void PrintName() { cout << "My name is Morgan Murphy!" << endl; }
 bool IsEven(int num) { return num % 2 == 0; }
-
 
