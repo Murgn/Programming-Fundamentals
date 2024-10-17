@@ -17,6 +17,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 4 - Loops", "Tutor
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 5 - Function", "Tutorial 5 - Function\Tutorial 5 - Function.vcxproj", "{5177388D-A53E-493C-A521-67B0BA1F3883}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 6 - Preprocessor and user-defined types", "Tutorial 6 - Preprocessor and user-defined types\Tutorial 6 - Preprocessor and user-defined types.vcxproj", "{98818FFB-0DE7-4EB0-B652-932477EE41AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -81,6 +83,14 @@ Global
 		{5177388D-A53E-493C-A521-67B0BA1F3883}.Release|x64.Build.0 = Release|x64
 		{5177388D-A53E-493C-A521-67B0BA1F3883}.Release|x86.ActiveCfg = Release|Win32
 		{5177388D-A53E-493C-A521-67B0BA1F3883}.Release|x86.Build.0 = Release|Win32
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Debug|x64.ActiveCfg = Debug|x64
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Debug|x64.Build.0 = Debug|x64
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Debug|x86.ActiveCfg = Debug|Win32
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Debug|x86.Build.0 = Debug|Win32
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x64.ActiveCfg = Release|x64
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x64.Build.0 = Release|x64
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x86.ActiveCfg = Release|Win32
+		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
