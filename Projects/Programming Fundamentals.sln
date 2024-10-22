@@ -19,6 +19,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 5 - Function", "Tu
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 6 - Preprocessor and user-defined types", "Tutorial 6 - Preprocessor and user-defined types\Tutorial 6 - Preprocessor and user-defined types.vcxproj", "{98818FFB-0DE7-4EB0-B652-932477EE41AE}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 7 - Arrays", "Tutorial 7 - Arrays\Tutorial 7 - Arrays.vcxproj", "{B5D50E16-C66C-4650-8935-0001EBA2BBC6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -91,6 +93,14 @@ Global
 		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x64.Build.0 = Release|x64
 		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x86.ActiveCfg = Release|Win32
 		{98818FFB-0DE7-4EB0-B652-932477EE41AE}.Release|x86.Build.0 = Release|Win32
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Debug|x64.ActiveCfg = Debug|x64
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Debug|x64.Build.0 = Debug|x64
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Debug|x86.ActiveCfg = Debug|Win32
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Debug|x86.Build.0 = Debug|Win32
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Release|x64.ActiveCfg = Release|x64
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Release|x64.Build.0 = Release|x64
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Release|x86.ActiveCfg = Release|Win32
+		{B5D50E16-C66C-4650-8935-0001EBA2BBC6}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
