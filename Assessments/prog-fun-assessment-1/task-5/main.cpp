@@ -31,6 +31,14 @@ int main(int argc, char* argv[])
             continue;
         }
 
+        bool isAlpha = false;
+        for (char c : input) if (!isAlpha) isAlpha = isalpha(c);
+        if(!isAlpha) 
+        {
+            cerr << "[!] Invalid input, received no alphanumeical characters, try again." << endl;
+            continue;
+        }
+
         // -- Uppercase ------------------------------------------
 
         string upperInput = "";
@@ -54,13 +62,13 @@ int main(int argc, char* argv[])
 
         for (char c : input)
         {
-            if (c == '.' || c == '!' || c == '?') shouldUpper = true;
-
             sentenceInput += shouldUpper ? toupper(c) : tolower(c);
 
-            // Need to include a check to make sure the character isnt a whitespace, if it is, don't disable shouldupper.
-
-            shouldUpper = false;
+            // If we receive punctuation, sets shouldUpper to true for the next character.
+            // If the character is alphanumeric, we know the next character shouldn't be capitalised.
+            // This check also makes sure we persist shouldUpper through whitespaces.
+            if (c == '.' || c == '!' || c == '?') shouldUpper = true;
+            else if(isalpha(c)) shouldUpper = false;
         }
 
         cout << "Sentence Case\t => " << sentenceInput << endl;
@@ -68,8 +76,18 @@ int main(int argc, char* argv[])
 
         // -- Alternate Case -------------------------------------
 
-        cout << "Alternate Case\t => " << endl;
-        for (char c : input) cout << c << (isalpha(c) ? " is" : " is not") << " alphanumeric" << endl;
+        string alternateInput = "";
+        shouldUpper = true; // Reusing the previous shouldUpper variable.
+
+        for (char c : input)
+        {
+            alternateInput += shouldUpper ? toupper(c) : tolower(c);
+            if (isalpha(c)) shouldUpper = !shouldUpper;
+        }
+
+        cout << "Alternate Case\t => " << alternateInput << endl;
     }
+    // Experimenting with how isalpha works.
+    //for (char c : input) cout << c << (isalpha(c) ? " is" : " is not") << " alphanumeric" << endl;
     return 0;
 }
