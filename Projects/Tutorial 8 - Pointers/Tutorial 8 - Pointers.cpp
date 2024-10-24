@@ -15,13 +15,17 @@ int main()
 
     float player1Health = 50.0f;
     float player2Health = 25.0f;
+
     cout << "player1Health: " << player1Health << endl;
     cout << "player2Health: " << player2Health << endl;
 
     float* currentHealth = &player1Health;
-    cout << "currentHealth Address: " << currentHealth << " player1Health Address: " << &player1Health << endl;
+    cout << "currentHealth's Pointer Address: " << currentHealth << " player1Health Address: " << &player1Health << endl;
     currentHealth = &player2Health;
-    cout << "currentHealth Address: " << currentHealth << " player1Health Address: " << &player2Health << endl;
+    cout << "currentHealth's Pointer Address: " << currentHealth << " player1Health Address: " << &player2Health << endl;
+    cout << "currentHealth Address" << currentHealth << endl;
+
+    // -------------------------------------------------------
 
 
 
