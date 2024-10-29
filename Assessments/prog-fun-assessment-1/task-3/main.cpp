@@ -3,7 +3,7 @@
 
 using namespace std;
 
-enum class ErrorCodes
+enum ErrorCodes
 {
     // no 0
     ERROR_STRING_INPUT = 10, 
@@ -21,7 +21,7 @@ int main(int argc, char* argv[])
         cin.clear();
         cin.ignore(1000, '\n');
         cerr << "[!] Received a string instead on a number, restarting." << endl;
-        return (int)ErrorCodes::ERROR_STRING_INPUT;
+        return ErrorCodes::ERROR_STRING_INPUT;
     }
 
     cout << "neg(x): " << num * -1 << endl;

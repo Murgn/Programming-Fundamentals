@@ -14,6 +14,9 @@ int main(int argc, char* argv[])
         cout << "Enter a guess: ";
         cin >> guess;
 
+        // Equations
+        int d = 
+
         // Error Handling
         if (cin.fail())
         {
