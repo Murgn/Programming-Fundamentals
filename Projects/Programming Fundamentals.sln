@@ -27,6 +27,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 9 - Bitwise Operat
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 10 - Debugging", "Tutorial 10 - Debugging\Tutorial 10 - Debugging.vcxproj", "{0CCBDA90-1AFA-4119-A649-91A9B60875A2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Tutorial 11 - Classes", "Tutorial 11 - Classes\Tutorial 11 - Classes.vcxproj", "{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -131,6 +133,14 @@ Global
 		{0CCBDA90-1AFA-4119-A649-91A9B60875A2}.Release|x64.Build.0 = Release|x64
 		{0CCBDA90-1AFA-4119-A649-91A9B60875A2}.Release|x86.ActiveCfg = Release|Win32
 		{0CCBDA90-1AFA-4119-A649-91A9B60875A2}.Release|x86.Build.0 = Release|Win32
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Debug|x64.ActiveCfg = Debug|x64
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Debug|x64.Build.0 = Debug|x64
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Debug|x86.ActiveCfg = Debug|Win32
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Debug|x86.Build.0 = Debug|Win32
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Release|x64.ActiveCfg = Release|x64
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Release|x64.Build.0 = Release|x64
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Release|x86.ActiveCfg = Release|Win32
+		{1291F8DE-4F56-498A-BEAD-AFA0F0B857ED}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
