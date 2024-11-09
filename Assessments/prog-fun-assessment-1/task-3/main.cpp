@@ -20,7 +20,7 @@ int main(int argc, char* argv[])
     {
         cin.clear();
         cin.ignore(1000, '\n');
-        cerr << "[!] Received a string instead on a number, restarting." << endl;
+        cerr << "[!] Received a string instead of a number, restarting." << endl;
         return ErrorCodes::ERROR_STRING_INPUT;
     }
 
