@@ -16,10 +16,11 @@ int main()
     }
 
     AsciiGenerator::Generate("0123456789");
-    AsciiGenerator::Generate("$%()_[];:'@#,<.>\\|/?!\"£-=+");
+    AsciiGenerator::Generate("-=+_[];:'@#,<.>\\|/?!\"£$%()");
 
     // ----------------------------------------------------
 
+    AsciiGenerator::Generate("Hello World.");
     AsciiGenerator::Generate("HELLO WORLD", { Colors::Red });
     AsciiGenerator::Generate("hello world", { Colors::Green });
     AsciiGenerator::Generate("HELLO world", { Colors::Blue });
