@@ -1,9 +1,14 @@
 #include <iostream>
 #include "colors.h"
 #include "AsciiGenerator.h"
+#include <string>
+#include <Windows.h>
 
 int main()
 {
+    HWND hWnd = GetConsoleWindow();
+    ShowWindow(hWnd, SW_SHOWMAXIMIZED);
+
     // All the different ways you can output the ASCII art.
 
     std::vector<std::string> ascii1 = AsciiGenerator::Generate("QWERTYUIOPASDFGHJKLZXCVBNM", { Colors::White, false });
@@ -16,7 +21,7 @@ int main()
     }
 
     AsciiGenerator::Generate("0123456789");
-    AsciiGenerator::Generate("-=+_[];:'@#,<.>\\|/?!\"£$%()");
+    AsciiGenerator::Generate("£$%()-=+_[];:'@#,<.>\\|/?!\"");
 
     // ----------------------------------------------------
 

@@ -12,6 +12,13 @@ int main(int argc, char* argv[])
         cout << "Please enter some text: ";
         getline(cin, input);
 
+        int counter = 0;
+        for (char whatever : input)
+        {
+            counter++;
+            cout << counter << " : " << whatever << endl;
+        }
+
 
         // Error Handling
         if (cin.fail())
@@ -41,6 +48,7 @@ int main(int argc, char* argv[])
             lines[1] += ((i == 0 ? "|  " : "  ") + string(1, c) + "  |"); 
             i++;
         }
+
 
         // Originally I was going to approach this by calculating whether the current iteration was odd or even,
         // Then depending on the result, either adding a - or an =. But I realised the approach I used in the end

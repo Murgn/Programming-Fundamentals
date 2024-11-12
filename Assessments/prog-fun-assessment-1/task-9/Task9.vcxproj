@@ -245,6 +245,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include=".\main.cpp" />
+    <ClCompile Include="Vector2.cpp" />
     <ClInclude Include=".\Vector2.h" />
   </ItemGroup>
   <ItemGroup>
