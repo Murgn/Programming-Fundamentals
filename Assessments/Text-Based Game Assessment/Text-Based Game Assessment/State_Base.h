@@ -1,8 +1,5 @@
 #pragma once
-#include "colors.h"
 #include "utilities.h"
-#include "AsciiGenerator.h"
-#include "logging.h"
 
 class State_Base 
 {

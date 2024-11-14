@@ -25,3 +25,15 @@ void Utilities::strToUpper(std::string& input)
 
 	input = temp;
 }
+
+void Utilities::clear() { system("CLS"); }
+
+bool Utilities::within(int num, int min, int max)
+{
+	return min <= num && max >= num;
+}
+
+bool Utilities::within(float num, float min, float max)
+{
+	return min <= num && max >= num;
+}
