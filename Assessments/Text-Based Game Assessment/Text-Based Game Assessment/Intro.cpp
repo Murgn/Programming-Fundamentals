@@ -11,6 +11,6 @@ void Intro::main()
 	Logging::LogRepeat(ascii1, 300);
 
 	
-		std::cin;
+	Logging::Log()
 
 }
