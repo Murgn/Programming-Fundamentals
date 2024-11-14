@@ -3,6 +3,9 @@
 
 int main(int argc, char* argv[]) 
 {
+    /*
+        Testing out my Vector2 class
+    
     std::cout << Vector2(2, 3) + Vector2(8, 7) << std::endl;
     std::cout << -Vector2(1, 1) << std::endl;
 
@@ -13,10 +16,26 @@ int main(int argc, char* argv[])
     vec1 = vec2;
     std::cout << vec1 << std::endl;
 
-    //Please build your interactive calculator, using the
-    //Vector2 class, here.
-    bool test = true;
-    std::cout << sizeof(test);
+    while (true)
+    {
+        Vector2 input;
+        std::cout << "Please input a Vector2: ( x, y ) ";
+        std::cin >> input;
+
+        if (std::cin.fail())
+        {
+            std::cin.clear();
+            std::cin.ignore(1000, '\n');
+
+            std::cerr << "\033[31m[!]\033[0m Invalid input, try again." << std::endl;
+
+            continue;
+        }
+
+        std::cout << input << std::endl;
+    }*/
+
+
 
     return 0;
 }

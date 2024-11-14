@@ -6,9 +6,8 @@
 
 int main()
 {
-    HWND hWnd = GetConsoleWindow();
-    ShowWindow(hWnd, SW_SHOWMAXIMIZED);
-
+    HWND hWnd = ::GetConsoleWindow();
+    if (hWnd) ::SendMessage(hWnd, WM_SYSCOMMAND, SC_MAXIMIZE, 0);
     // All the different ways you can output the ASCII art.
 
     std::vector<std::string> ascii1 = AsciiGenerator::Generate("QWERTYUIOPASDFGHJKLZXCVBNM", { Colors::White, false });

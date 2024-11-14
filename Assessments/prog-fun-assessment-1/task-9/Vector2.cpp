@@ -58,6 +58,17 @@ std::ostream& operator<<(std::ostream& os, Vector2 const& v)
 	return os;
 }
 
+std::istream& operator>>(std::istream& is, Vector2& v)
+{
+	char comma;
+	is >> v.x >> comma >> v.y;
+
+	if(comma != ',')
+		is.setstate(std::ios::failbit); // Telling the user the input format is wrong
+
+	return is;
+}
+
 float Vector2::Dot(const Vector2& vec1, const Vector2& vec2)
 {
 	return vec1.x * vec2.x + vec1.y * vec2.y;

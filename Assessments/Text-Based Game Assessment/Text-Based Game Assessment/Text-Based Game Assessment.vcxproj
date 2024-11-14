@@ -127,7 +127,26 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Text-Based Game Assessment.cpp" />
+    <ClCompile Include="AsciiGenerator.cpp" />
+    <ClCompile Include="Campfire.cpp" />
+    <ClCompile Include="colors.cpp" />
+    <ClCompile Include="Encounter.cpp" />
+    <ClCompile Include="Intro.cpp" />
+    <ClCompile Include="logging.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="utilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AsciiGenerator.h" />
+    <ClInclude Include="Campfire.h" />
+    <ClInclude Include="colors.h" />
+    <ClInclude Include="Encounter.h" />
+    <ClInclude Include="Intro.h" />
+    <ClInclude Include="logging.h" />
+    <ClInclude Include="main.h" />
+    <ClInclude Include="State_Base.h" />
+    <ClInclude Include="States.h" />
+    <ClInclude Include="utilities.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

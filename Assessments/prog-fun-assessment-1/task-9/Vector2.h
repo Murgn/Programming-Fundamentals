@@ -1,13 +1,13 @@
 #pragma once
-#include <ostream>
+#include <iostream>
 
 class Vector2
 {
 public:
-	int x;
-	int y;
+	float x;
+	float y;
 
-	Vector2(int x = 0, int y = 0)
+	Vector2(float x = 0, float y = 0)
 	{
 		this->x = x;
 		this->y = y;
@@ -34,6 +34,7 @@ public:
 	Vector2& operator=(const Vector2& other);
 
 	friend std::ostream& operator<<(std::ostream& os, Vector2 const& v);
+	friend std::istream& operator>>(std::istream& is, Vector2& v);
 
 	static float Dot(const Vector2& vec1, const Vector2& vec2);
 
