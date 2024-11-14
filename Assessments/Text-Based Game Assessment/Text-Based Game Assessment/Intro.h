@@ -8,4 +8,7 @@ public:
 	void main() override;
 private:
 	bool HandleMenuCommand(const int command);
+	void NewGame();
+	void LoadGame();
+	void Quit();
 };

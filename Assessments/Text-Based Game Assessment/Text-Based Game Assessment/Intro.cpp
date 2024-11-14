@@ -21,7 +21,16 @@ void Intro::main()
 
 		if (HandleMenuCommand(input))
 			continue;
-		Logging::Log("Received input: " + std::to_string(input));
+
+		switch (input)
+		{
+		case 1: // New Game
+
+		case 2: // Load Game
+
+		case 3: // Quit
+			Quit();
+		}
 	
 	}
 }
@@ -37,4 +46,21 @@ bool Intro::HandleMenuCommand(const int command)
 		return true;
 	}
 	return false;
+}
+
+void Intro::NewGame()
+{
+
+}
+
+void Intro::LoadGame()
+{
+
+}
+
+void Intro::Quit()
+{
+	Logging::Log("Quitting", false);
+	Logging::LogRepeat("...", 150);
+	exit(0);
 }
