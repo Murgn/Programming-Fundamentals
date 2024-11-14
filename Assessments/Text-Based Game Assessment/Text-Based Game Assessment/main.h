@@ -6,13 +6,13 @@ using namespace std;
 
 enum GameStates
 {
-	ERROR = 0,
+	UNDEFINED = 0,
 	INTRO = 1,
 	ENCOUNTER = 2,
 	CAMPFIRE = 3
 };
 
-GameStates gameState = GameStates::ERROR;
+GameStates gameState = GameStates::UNDEFINED;
 
 Intro intro;
 Encounter encounter;

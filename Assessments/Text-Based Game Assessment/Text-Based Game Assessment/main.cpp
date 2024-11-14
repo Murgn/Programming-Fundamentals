@@ -2,11 +2,13 @@
 
 int main()
 {
+    gameState = GameStates::INTRO;
+
     while (true)
     {
         switch (gameState)
         {
-        case GameStates::ERROR:
+        case GameStates::UNDEFINED:
             Logging::LogWarning("Invalid GameState!");
             break;
 
