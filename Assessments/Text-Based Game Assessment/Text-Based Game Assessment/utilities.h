@@ -13,11 +13,13 @@
 class Utilities
 {
 public:
+	static void initRand();
 	static int range(int minInclusive, int maxExclusive);
 	static void strToLower(std::string& input);
 	static void strToUpper(std::string& input);
 	static void clear();
 	static bool within(int num, int min, int max);
 	static bool within(float num, float min, float max);
-
+private:
+	static bool randInit;
 };

@@ -2,29 +2,30 @@
 
 int main()
 {
-    gameState = GameStates::INTRO;
+    Utilities::initRand();
+    Game::gameState = Game::GameStates::INTRO;
 
     while (true)
     {
-        switch (gameState)
+        switch (Game::gameState)
         {
-        case GameStates::UNDEFINED:
+        case Game::GameStates::UNDEFINED:
             Logging::LogWarning("Invalid GameState!");
             break;
 
-        case GameStates::INTRO:
+        case Game::GameStates::INTRO:
             intro.main();
             break;
 
-        case GameStates::ENCOUNTER:
+        case Game::GameStates::ENCOUNTER:
             encounter.main();
             break;
 
-        case GameStates::CAMPFIRE:
+        case Game::GameStates::CAMPFIRE:
             campfire.main();
             break;
         }
     }
 
-    return gameState;
+    return Game::gameState;
 }

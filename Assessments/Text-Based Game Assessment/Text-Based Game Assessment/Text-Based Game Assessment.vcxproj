@@ -132,6 +132,8 @@
     <ClCompile Include="colors.cpp" />
     <ClCompile Include="Encounter.cpp" />
     <ClCompile Include="ErrorHandler.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Input.cpp" />
     <ClCompile Include="Intro.cpp" />
     <ClCompile Include="logging.cpp" />
     <ClCompile Include="main.cpp" />
@@ -143,6 +145,7 @@
     <ClInclude Include="colors.h" />
     <ClInclude Include="Encounter.h" />
     <ClInclude Include="ErrorHandler.h" />
+    <ClInclude Include="Game.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Intro.h" />
     <ClInclude Include="logging.h" />

@@ -4,7 +4,6 @@
 #include <Windows.h>
 #include "colors.h"
 
-// Errors are for players, Warnings are for me
 class Logging
 {
 public:
