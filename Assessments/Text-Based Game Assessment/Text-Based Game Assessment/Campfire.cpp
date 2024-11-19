@@ -11,7 +11,13 @@ void Campfire::main()
 		if (increase)
 		{
 			player.maxHealth += increase;
-			Logging::Log("   ")
+			Logging::Log("   " + player.name + " the " + Game::roleToStr[player.weapon.role] + "'s max health was increased by " + std::to_string(increase) + "!");
 		}
+		else
+		{
+			Logging::Log("   " + player.name + " the " + Game::roleToStr[player.weapon.role] + " max health wasn't increased!", Colors::BrightBlack);
+		}
+		Game::
+		Logging
 	}
 }
