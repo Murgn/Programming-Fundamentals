@@ -37,7 +37,7 @@
 			ItemType itemType = ItemType::NoType;
 			int price = 0;
 			int damage = 0;
-			Roles role;
+			Roles role = Roles::Human;
 			bool bought = false;
 		};
 
@@ -46,6 +46,8 @@
 			std::string name;
 			Weapon weapon;
 			int maxHealth = 10;
+			int health = 0;
+			bool blocking = false;
 		};
 
 		struct GameSettings
@@ -61,5 +63,6 @@
 		static std::map<ItemType, std::string> itemTypeToStr;
 		static std::map<Roles, ItemType> roleToItemType;
 
-		static void LogParty();
+		static void LogParty(bool printAscii = true);
+		static void HealParty();
 	};

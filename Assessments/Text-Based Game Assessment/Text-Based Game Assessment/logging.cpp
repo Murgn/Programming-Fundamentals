@@ -7,7 +7,7 @@ const void Logging::LogError(const std::string& output)
 
 const void Logging::LogWarning(const std::string& output)
 {
-	Logging::Log(std::string(Colors::Yellow) + "[!] " + Colors::None + output, true);
+	Logging::Log(std::string(Colors::Yellow) + "[?] " + Colors::None + output, true);
 }
 
 const void Logging::LogRepeat(const std::string& output, const int delay, const bool endLine)

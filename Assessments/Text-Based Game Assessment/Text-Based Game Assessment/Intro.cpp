@@ -20,7 +20,7 @@ void Intro::main()
 		int input = 0;
 		Input::Get<int>(input);
 
-		if (HandleMenuCommand(input, 1, 3))
+		if (ErrorHandler::HandleMenuCommand(input, 1, 3))
 			continue;
 
 		switch (input)
@@ -41,14 +41,24 @@ void Intro::main()
 
 void Intro::NewGame()
 {
+	Utilities::clearLines(5);
 	std::string name = "";
-	Utilities::clear();	
+	//Utilities::clear();	
 	while (true)
 	{
 		name = "";
 		Logging::Log("   What's your name?");
-		Input::Get(name);
-		Logging::Log("   You said: " + name + ".");
+		while (true)
+		{
+			// Reusing int confirm variable
+			Input::Get(name);
+
+			if (ErrorHandler::HandleString(name))
+				continue;
+
+			break;
+		}
+		Logging::Log("   You said: " + name);
 		Logging::Log("   Are you sure this is your name?");
 
 		int confirm = 0;
@@ -56,7 +66,7 @@ void Intro::NewGame()
 		Logging::Log("-  (2) No");
 		Input::Get<int>(confirm);
 
-		if (HandleMenuCommand(confirm, 1, 2))
+		if (ErrorHandler::HandleMenuCommand(confirm, 1, 2))
 			continue;
 
 		if (confirm == 1) break;
@@ -65,18 +75,19 @@ void Intro::NewGame()
 
 	Utilities::clear();
 	
-	Game::settings.party.push_back({ name, { "Stick", Game::ItemType::NoType, 0, 3, Game::Roles::Human, true }, 10});
-	Game::settings.party.push_back({ "Arthur", { "Excalibur", Game::ItemType::Sword, 0, 2, Game::Roles::Knight, true }, 10 });
-	Game::settings.party.push_back({ "Merlin", { "Tome of Explosion", Game::ItemType::Spell, 0, 5, Game::Roles::Wizard, true }, 10 });
+	Game::settings.party.push_back({ name, { "Stick", Game::ItemType::Sword, 0, 3, Game::Roles::Human, true }, 10});
+	// Game::settings.party.push_back({ "Arthur", { "Excalibur", Game::ItemType::Sword, 0, 2, Game::Roles::Knight, true }, 10 });
+	// Game::settings.party.push_back({ "Merlin", { "Tome of Explosion", Game::ItemType::Spell, 0, 5, Game::Roles::Wizard, true }, 10 });
+	Game::HealParty();
 
 	Game::LogParty();
 
 	Sleep(500);
 
-	Logging::LogRepeat("The labyrinth opens,", 100);
-	Logging::LogRepeat("You delve deeper within...", 150);
+	Logging::LogRepeat("   The labyrinth opens,", 100);
+	Logging::LogRepeat("   You delve deeper within...", 150);
 
-	Sleep(750);
+	Sleep(1250);
 
 	Game::gameState = Game::GameStates::ENCOUNTER;
 }
@@ -91,17 +102,4 @@ void Intro::Quit()
 	Logging::Log("Quitting", false);
 	Logging::LogRepeat("...", 150);
 	exit(0);
-}
-
-bool Intro::HandleMenuCommand(const int command, const int min, const int max)
-{
-	if (ErrorHandler::HandleError()) return true;
-	else if (!Utilities::within(command, min, max))
-	{
-		ErrorHandler::ClearInput();
-		Logging::LogError("Input out of range, try again.");
-
-		return true;
-	}
-	return false;
 }
