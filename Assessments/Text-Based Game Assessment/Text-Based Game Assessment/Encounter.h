@@ -193,5 +193,6 @@ private:
 	// This is implemented here instead of Game.h because my aliveParties vector is a copy of Game::settings.party
 	void ResetPartyBlocks(std::vector<Game::Player>& alivePlayers);
 	void Die();
+	void Win(int enemyAmount);
 
 };

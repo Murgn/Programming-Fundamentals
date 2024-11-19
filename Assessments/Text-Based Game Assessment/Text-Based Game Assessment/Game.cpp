@@ -4,6 +4,7 @@ Game::GameStates Game::gameState = Game::GameStates::UNDEFINED;
 
 Game::GameSettings Game::settings;
 int Game::GameSettings::encounter = 0;
+int Game::GameSettings::gold = 0;
 std::vector<Game::Player> Game::GameSettings::party;
 
 std::map<Game::Roles, std::string> Game::roleToStr =
@@ -51,8 +52,10 @@ void Game::LogParty(bool printAscii)
 		if(Game::settings.party.size() > 1) Sleep(1000);
 	}
 
+
 	if (printAscii)
 	{
+		LogGold();
 		Logging::Log("___________________________________", Colors::Green);
 		Logging::EndLine();
 		Sleep(1000);
@@ -66,4 +69,10 @@ void Game::HealParty()
 	{
 		player.health = player.maxHealth;
 	}
+}
+
+void Game::LogGold()
+{
+	Sleep(500);
+	Logging::Log("   Your party currently has " + std::string(Colors::BrightYellow) + std::to_string(Game::settings.gold) + Colors::None + " gold!");
 }

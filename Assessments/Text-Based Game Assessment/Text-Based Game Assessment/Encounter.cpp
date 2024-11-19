@@ -11,8 +11,7 @@ void Encounter::main()
 	Logging::LogRepeat("...", 500);
 	Logging::EndLine();
 
-	// Come back to add enemies related to difficulty
-	int enemyAmount = 1;
+	int enemyAmount = 3;
 	std::vector<Enemy> aliveEnemies;
 	for (int i = 0; i < enemyAmount; i++)
 	{
@@ -125,7 +124,7 @@ void Encounter::main()
 		LogBattleStats(alivePlayers, aliveEnemies);
 	}
 
-	Sleep(2000);
+	Sleep(1000);
 
 	if (CheckPlayerState(alivePlayers))
 	{
@@ -133,7 +132,7 @@ void Encounter::main()
 	}
 	else if (CheckEnemyState(aliveEnemies))
 	{
-		Logging::Log("   ALL ENEMIES ARE DEAD!");
+		Win(enemyAmount);
 	}
 	else
 	{
@@ -143,12 +142,6 @@ void Encounter::main()
 		Logging::LogRepeat("Quitting...", 500);
 		exit(0);
 	}
-
-	// output coins
-	// every party member that slays an enemy gets health points (future morgan here, move this into campfire state)
-
-	Game::settings.encounter++;
-
 }
 
 Encounter::Enemy Encounter::enemyCreator()
@@ -158,7 +151,7 @@ Encounter::Enemy Encounter::enemyCreator()
 	Game::Weapon weapon = enemyWeapons[Utilities::range(0, sizeof(enemyWeapons) / sizeof(enemyWeapons[0]))];
 
 	// Need to adjust this to scale with encounters, for now left it as 3 + encounter / 3 + random range between -2 to 2
-	weapon.damage = 300 + (Game::settings.encounter / 3.0f) + Utilities::range(-2, 2);
+	weapon.damage = 3 + (Game::settings.encounter / 2.0f) + Utilities::range(-1, 2);
 
 	Enemy enemy = Enemy(name, weapon, 10);
 
@@ -455,4 +448,31 @@ void Encounter::Die()
 	Sleep(5000);
 	Logging::LogRepeat("Quitting...", 500);
 	exit(0);
+}
+
+void Encounter::Win(int enemyAmount)
+{
+	Logging::Log("   The enemies have all been slain!", Colors::BrightYellow);
+	Logging::EndLine();
+	Logging::EndLine();
+	Sleep(500);
+	std::vector<std::string> victory = AsciiGenerator::Generate("VICTORY", { Colors::BrightWhite, false });
+	Logging::LogRepeat(victory, 300);
+	Sleep(500);
+
+	int gold = (enemyAmount * 5) + Utilities::range(-2, 4);
+	Logging::Log("   From the ashes of your enemies, you gain " + std::string(Colors::BrightYellow) + std::to_string(gold) + Colors::None + " gold!");
+	Game::settings.gold += gold;
+	Sleep(1000);
+	Game::LogGold();
+	Sleep(1000);
+
+	Logging::EndLine();
+	SplitChoice();
+
+	Logging::LogRepeat("Deep in the labyrinth, you come across a campfire.", 50);
+	Game::settings.encounter++;
+	Sleep(1000);
+
+	Game::gameState = Game::GameStates::CAMPFIRE;
 }

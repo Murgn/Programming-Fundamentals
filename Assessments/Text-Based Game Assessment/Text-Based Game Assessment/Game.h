@@ -52,6 +52,7 @@
 
 		struct GameSettings
 		{
+			static int gold;
 			static std::vector<Player> party;
 			static int encounter;
 		};
@@ -65,4 +66,5 @@
 
 		static void LogParty(bool printAscii = true);
 		static void HealParty();
+		static void LogGold();
 	};

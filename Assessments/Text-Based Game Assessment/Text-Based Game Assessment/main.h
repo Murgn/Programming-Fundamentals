@@ -3,8 +3,6 @@
 #include "States.h"
 #include "Game.h"
 
-
-
 Intro intro;
 Encounter encounter;
 Campfire campfire;
