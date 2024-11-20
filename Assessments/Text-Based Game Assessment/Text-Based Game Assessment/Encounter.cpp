@@ -4,14 +4,14 @@ void Encounter::main()
 {
 	Utilities::clear();
 
-	if (Game::settings.encounter == 0) Tutorial();
+	if (Game::settings.encounter == 1) Tutorial();
 
 	Utilities::clear();
 
 	Logging::LogRepeat("...", 500);
 	Logging::EndLine();
 
-	int enemyAmount = 3;
+	int enemyAmount = ceil(Game::settings.encounter / 5.0f);
 	std::vector<Enemy> aliveEnemies;
 	for (int i = 0; i < enemyAmount; i++)
 	{

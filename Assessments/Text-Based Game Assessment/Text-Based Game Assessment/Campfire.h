@@ -17,4 +17,19 @@ private:
 		"The crackle of the fire breaks the silence of the night.",
 		"A comforting warmth radiates from the campfire."
 	};
+
+	std::string partyJoinMessages[10] = {
+		" approaches the campfire and joins your party!",
+		" steps into the light of the campfire and decides to join you!",
+		" is drawn to the warmth of the fire and joins your party!",
+		" sits by the campfire and pledges to aid you!",
+		" finds their way to the campfire and becomes part of your party!",
+		" approaches cautiously but agrees to join your journey!",
+		" is lured by the flames and joins your quest!",
+		" shares a quiet moment by the fire before joining your party!",
+		" takes a seat by the fire and decides to join the adventure!",
+		" steps out of the shadows and joins your party!"
+	};
+
+	void JoinParty();
 };

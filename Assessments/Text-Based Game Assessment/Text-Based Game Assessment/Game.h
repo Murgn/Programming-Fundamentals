@@ -64,6 +64,8 @@
 		static std::map<ItemType, std::string> itemTypeToStr;
 		static std::map<Roles, ItemType> roleToItemType;
 
+		static Weapon shopWeapons[30];
+
 		static void LogParty(bool printAscii = true);
 		static void HealParty();
 		static void LogGold();
