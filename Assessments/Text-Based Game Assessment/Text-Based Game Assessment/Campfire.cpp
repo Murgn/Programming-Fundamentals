@@ -24,7 +24,7 @@ void Campfire::main()
 			Sleep(500);
 
 		}
-		/*else
+		/*else 
 		{
 			Logging::Log("   " + player.name + " the " + Game::roleToStr[player.weapon.role] + " max health wasn't increased!", Colors::BrightBlack);
 		}*/
@@ -40,10 +40,44 @@ void Campfire::main()
 	{
 		JoinParty();
 	}
+	Sleep(500);
 
-	Logging::Log("   What do you want to do?");
+	Logging::EndLine();
+	Logging::Log("Amidst the fog... A travelling merchant appears...", Colors::BrightBlack);
 
-	
+	while (true)
+	{
+		Logging::EndLine();
+		Logging::Log("   What do you want to do?");
+		Sleep(500);
+
+		int confirm = 0;
+
+		Logging::Log("-  (1) Rest");
+		Logging::Log("-  (2) Visit the Merchant");
+		while (true)
+		{
+			Input::Get<int>(confirm);
+
+			if (ErrorHandler::HandleMenuCommand(confirm, 1, 2))
+				continue;
+
+			//Logging::EndLine();
+			Sleep(250);
+
+			if (confirm == 1)
+			{
+				Logging::Log("You party rests at the campfire and wakes up renewed");
+				Game::SplitChoice();
+				return;
+			}
+			else if (confirm == 2)
+			{
+
+			}
+		}
+		break;
+	}
 }
 
 void Campfire::JoinParty()
@@ -79,5 +113,11 @@ void Campfire::JoinParty()
 
 		break;
 	} 
+	newPlayer.name = name;
+	Game::settings.party.push_back(newPlayer);
+
+	Sleep(1000);
+	Game::LogParty();
+	Sleep(1000);
 }
  

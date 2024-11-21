@@ -181,31 +181,7 @@ void Encounter::Tutorial()
 	Logging::LogRepeat(text, 2500);
 
 	Logging::EndLine();
-	SplitChoice();
-}
-
-void Encounter::SplitChoice()
-{
-	int confirm = 0;
-	int choices = Utilities::range(2, 4);
-	std::vector<std::string> list(std::begin(directions), std::end(directions));
-
-	for (int i = 1; i <= choices; i++)
-	{
-		int direction = Utilities::range(0, list.size());
-		Logging::Log("-  (" + std::to_string(i) +") " + directions[direction]);
-		list.erase(list.begin() + direction);
-	}
-
-	while (true)
-	{
-		Input::Get<int>(confirm);
-
-		if (ErrorHandler::HandleMenuCommand(confirm, 1, choices))
-			continue;
-
-		break;
-	}
+	Game::SplitChoice();
 }
 
 void Encounter::LogEnemy(const std::vector<Enemy>& enemies)
@@ -468,7 +444,7 @@ void Encounter::Win(int enemyAmount)
 	Sleep(1000);
 
 	Logging::EndLine();
-	SplitChoice();
+	Game::SplitChoice();
 
 	Logging::LogRepeat("Deep in the labyrinth, you come across a campfire.", 50);
 	Game::settings.encounter++;

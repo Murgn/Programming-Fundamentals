@@ -32,35 +32,6 @@ private:
 		"Dragon"
 	};
 
-	std::string directions[25]
-	{
-		"Turn the corner",
-		"Keep walking",
-		"Go straight ahead",
-		"Take the left path",
-		"Take the right path",
-		"Stop and look around",
-		"Head towards the faint light",
-		"Follow the trail of footprints",
-		"Move towards the sound of dripping water",
-		"Follow the flickering torches",
-		"Stay close to the wall",
-		"Choose the path with no footprints",
-		"Ignore the whispering voices",
-		"Cross the stone bridge",
-		"Descend the staircase",
-		"Ascend the staircase",
-		"Fight through the vines blocking the path",
-		"Follow the strange carvings on the wall",
-		"Push through the heavy door",
-		"Crawl through the opening",
-		"Retrace your steps carefully",
-		"Navigate through the mist",
-		"Ignore the footsteps behind you",
-		"Follow the sound of laughter",
-		"Chase the echoes calling your name",
-	};
-
 	std::string appearances[7] =
 	{
 		"blocks the path!",

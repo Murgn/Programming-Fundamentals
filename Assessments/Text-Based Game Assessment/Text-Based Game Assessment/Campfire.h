@@ -17,7 +17,7 @@ private:
 		"The crackle of the fire breaks the silence of the night.",
 		"A comforting warmth radiates from the campfire."
 	};
-
+		
 	std::string partyJoinMessages[10] = {
 		" approaches the campfire and joins your party!",
 		" steps into the light of the campfire and decides to join you!",

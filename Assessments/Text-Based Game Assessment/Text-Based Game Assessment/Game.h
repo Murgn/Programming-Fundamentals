@@ -66,7 +66,10 @@
 
 		static Weapon shopWeapons[30];
 
+		static const std::string directions[25];
+
 		static void LogParty(bool printAscii = true);
 		static void HealParty();
 		static void LogGold();
+		static void SplitChoice();
 	};
