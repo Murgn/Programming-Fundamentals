@@ -157,7 +157,7 @@ Encounter::Enemy Encounter::enemyCreator()
 	weapon.damage = 3 + (Game::settings.encounter / 2.0f) + Utilities::range(-1, 2);
 
 	// Need to scale enemy health
-	int health = 10 + floor(Game::settings.encounter / 1.75f);
+	int health = 10 + floor(Game::settings.encounter / 1.75f) + Utilities::range(-3, 3);
 
 	Enemy enemy = Enemy(name, weapon, health);
 
