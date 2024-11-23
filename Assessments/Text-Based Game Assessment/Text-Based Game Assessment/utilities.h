@@ -8,7 +8,6 @@
 #include "logging.h"
 #include "Input.h"
 #include "colors.h"
-#include "ErrorHandler.h"
 
 class Utilities
 {

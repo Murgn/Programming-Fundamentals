@@ -77,8 +77,8 @@ void Intro::NewGame()
 	
 	Game::settings.gold = 10;
 	Game::settings.party.push_back({ name, { "Stick", Game::ItemType::NoType, 0, 3, Game::Roles::Human, true }, 10});
-	Game::settings.party.push_back({ "Arthur", { "Excalibur", Game::ItemType::Sword, 0, 2, Game::Roles::Knight, true }, 10 });
-	Game::settings.party.push_back({ "Merlin", { "Tome of Explosion", Game::ItemType::Spell, 0, 5, Game::Roles::Wizard, true }, 10 });
+	//Game::settings.party.push_back({ "Arthur", { "Excalibur", Game::ItemType::Sword, 0, 2, Game::Roles::Knight, true }, 10 });
+	//Game::settings.party.push_back({ "Merlin", { "Tome of Explosion", Game::ItemType::Spell, 0, 5, Game::Roles::Wizard, true }, 10 });
 	Game::HealParty();
 
 	Game::LogParty();

@@ -132,7 +132,10 @@ void Encounter::main()
 	}
 	else if (CheckEnemyState(aliveEnemies))
 	{
-		Win(enemyAmount);
+		if (Game::settings.encounter == 19)
+			GameWin();
+		else
+			Win(enemyAmount);
 	}
 	else
 	{
@@ -153,7 +156,10 @@ Encounter::Enemy Encounter::enemyCreator()
 	// Need to adjust this to scale with encounters, for now left it as 3 + encounter / 3 + random range between -2 to 2
 	weapon.damage = 3 + (Game::settings.encounter / 2.0f) + Utilities::range(-1, 2);
 
-	Enemy enemy = Enemy(name, weapon, 10);
+	// Need to scale enemy health
+	int health = 10 + floor(Game::settings.encounter / 1.75f);
+
+	Enemy enemy = Enemy(name, weapon, health);
 
 	return enemy;
 	
@@ -445,10 +451,91 @@ void Encounter::Win(int enemyAmount)
 
 	Logging::EndLine();
 	Game::SplitChoice();
-
+	Sleep(500);
 	Logging::LogRepeat("Deep in the labyrinth, you come across a campfire.", 50);
 	Game::settings.encounter++;
 	Sleep(1000);
 
 	Game::gameState = Game::GameStates::CAMPFIRE;
+}
+
+void Encounter::GameWin()
+{
+	Logging::Log("   The enemies have all been slain!", Colors::BrightYellow);
+	Logging::EndLine();
+	Logging::EndLine();
+	Sleep(500);
+	std::vector<std::string> victory = AsciiGenerator::Generate("VICTORY", { Colors::BrightYellow, false });
+	Logging::LogRepeat(victory, 300);
+	Sleep(500);
+	Logging::Log("   But wait, what's this?", Colors::BrightBlack);
+	Sleep(1000);
+	Logging::EndLine();
+	Game::SplitChoice();
+	Sleep(1000);
+	Logging::EndLine();
+	Logging::Log("   While making your way through " + std::string(Colors::BrightPurple) + "Wisteria's" + Colors::Purple + " Labyrinth" + Colors::None + ",");
+	Sleep(1500);
+	Logging::Log("   Your party stumbles upon an ancient ceremonial door, etched with unrecognisable runes\n   and silently guarded by the scattered remains of those who have perished.");
+	Sleep(5000);
+	Logging::Log("   " + Game::settings.party[1].name + " pushes on the door as cogs and locks click from within...");
+	Sleep(3500);
+	Logging::Log("   The door springs to life as it sweeps open, and your party gazes inside.");
+	Sleep(3000);
+	Logging::EndLine();
+	Logging::Log("YOU FOUND:", Colors::BrightWhite);
+	std::vector<std::string> ascii1 = AsciiGenerator::Generate("Wisteria\'s", { Colors::BrightPurple, false });
+	ascii1.pop_back();
+	std::vector<std::string> ascii2 = AsciiGenerator::Generate("Treasure", { Colors::BrightYellow, false });
+	ascii1.insert(ascii1.end(), ascii2.begin(), ascii2.end());
+
+	Logging::LogRepeat(ascii1, 300);
+
+	Sleep(3000);
+	Logging::EndLine();
+	Logging::LogRepeat("Wisteria's Treasure has been found, but that doesn't mean the adventure has to end!", 100);
+	Sleep(500);
+	Logging::Log("-  (1) Head back into the fog (ENDLESS MODE)");
+	Logging::Log("-  (2) Say goodbye to your fellow adventurers");
+
+	int confirm = 0;
+	while (true)
+	{
+		Input::Get<int>(confirm);
+
+		if (ErrorHandler::HandleMenuCommand(confirm, 1, 2))
+			continue;
+
+		Sleep(250);
+		if (confirm == 1)
+		{
+			int gold = 500;
+			Logging::Log("   From your newfound riches, you gain " + std::string(Colors::BrightYellow) + std::to_string(gold) + Colors::None + " gold!");
+			Game::settings.gold += gold;
+			Sleep(1000);
+			Game::LogGold();
+			Sleep(1000);
+
+			Logging::EndLine();
+			Game::SplitChoice();
+			Sleep(500);
+			Logging::LogRepeat("Deep in the labyrinth, you come across a campfire.", 50);
+			Game::settings.encounter++;
+			Sleep(1000);
+
+			Game::gameState = Game::GameStates::CAMPFIRE;
+			return;
+		}
+		if (confirm == 2)
+		{
+			Logging::Log("   After a long adventure, you say goodbye to your party.");
+			Sleep(1000);
+			Game::settings.gold = 9999;
+			Game::LogGold();
+			Sleep(2000);
+			Logging::LogRepeat("Quitting...", 500);
+			exit(0);
+		}
+
+	}
 }

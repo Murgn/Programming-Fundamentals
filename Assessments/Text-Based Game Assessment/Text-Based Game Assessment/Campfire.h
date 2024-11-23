@@ -32,4 +32,6 @@ private:
 	};
 
 	void JoinParty();
+	Game::Weapon RandomiseWeapon();
+	const bool HandleShopCommand(const Game::Weapon weapon);
 };

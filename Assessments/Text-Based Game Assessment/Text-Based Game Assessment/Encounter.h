@@ -165,5 +165,5 @@ private:
 	void ResetPartyBlocks(std::vector<Game::Player>& alivePlayers);
 	void Die();
 	void Win(int enemyAmount);
-
+	void GameWin();
 };

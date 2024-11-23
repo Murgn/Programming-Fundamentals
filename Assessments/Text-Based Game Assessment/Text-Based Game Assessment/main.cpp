@@ -4,7 +4,7 @@ int main()
 {
     Utilities::initRand();
     Game::gameState = Game::GameStates::INTRO;
-    Game::settings.encounter++; // REMOVE AFTER
+    //Game::settings.encounter = 19; // REMOVE AFTER
 
     while (true)
     {

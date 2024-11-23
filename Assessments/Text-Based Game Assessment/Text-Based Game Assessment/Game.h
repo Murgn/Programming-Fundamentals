@@ -70,6 +70,6 @@
 
 		static void LogParty(bool printAscii = true);
 		static void HealParty();
-		static void LogGold();
+		static void LogGold(bool endLine = true);
 		static void SplitChoice();
 	};
