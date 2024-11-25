@@ -42,7 +42,7 @@ void Campfire::main()
 	}
 	Sleep(500);
 
-	bool shopAvailable = Utilities::range(0, 3) != 0;
+	bool shopAvailable = Utilities::range(0, 5) != 0;
 	const int itemCount = 6;
 	std::vector<Game::Weapon> weapons;
 
