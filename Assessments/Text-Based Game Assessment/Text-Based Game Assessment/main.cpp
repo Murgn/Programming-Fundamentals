@@ -2,6 +2,7 @@
 
 int main()
 {
+    Utilities::clear();
     Utilities::initRand();
     Game::gameState = Game::GameStates::INTRO;
     //Game::settings.encounter = 19; // REMOVE AFTER
