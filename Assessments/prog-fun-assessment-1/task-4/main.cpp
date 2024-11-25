@@ -12,14 +12,6 @@ int main(int argc, char* argv[])
         cout << "Please enter some text: ";
         getline(cin, input);
 
-        int counter = 0;
-        for (char whatever : input)
-        {
-            counter++;
-            cout << counter << " : " << whatever << endl;
-        }
-
-
         // Error Handling
         if (cin.fail())
         {

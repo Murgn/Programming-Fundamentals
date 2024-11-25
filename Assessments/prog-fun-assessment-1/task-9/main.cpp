@@ -2,9 +2,8 @@
 #include "Vector2.h"
 
 int main(int argc, char* argv[]) 
-{
-    /*
-        Testing out my Vector2 class
+{    
+    //Testing out my Vector2 class
     
     std::cout << Vector2(2, 3) + Vector2(8, 7) << std::endl;
     std::cout << -Vector2(1, 1) << std::endl;
@@ -33,7 +32,7 @@ int main(int argc, char* argv[])
         }
 
         std::cout << input << std::endl;
-    }*/
+    }
 
 
 
