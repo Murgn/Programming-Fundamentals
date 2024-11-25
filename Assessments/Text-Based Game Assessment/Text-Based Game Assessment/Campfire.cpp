@@ -158,7 +158,7 @@ void Campfire::main()
 								Logging::EndLine();
 								Logging::Log("   " + Game::settings.party[input - 1].name + " bought the " + weapons[confirm - 1].name + "!");
 
-								Game::settings.party[0].weapon = weapons[confirm - 1];
+								Game::settings.party[input - 1].weapon = weapons[confirm - 1];
 								Game::settings.gold -= weapons[confirm - 1].price;
 								weapons[confirm - 1].bought = true;
 
